@@ -26,15 +26,23 @@ local_css("style.css")
 # ========== GOOGLE SHEET FUNCTIONS ==========
 def log_to_sheet(input_type, emotion, confidence=None, filename=None):
     try:
-        gc = gspread.service_account(filename="creds.json")
+        creds_dict = st.secrets["gcp_service_account"]
+        scopes = [
+            "https://www.googleapis.com/auth/spreadsheets",
+            "https://www.googleapis.com/auth/drive"
+        ]
+        credentials = Credentials.from_service_account_info(creds_dict, scopes=scopes)
+        gc = gspread.authorize(credentials)
         sh = gc.open("mood-detector-log")
         worksheet = sh.sheet1
+
         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         row = [timestamp, input_type, emotion]
         if confidence is not None:
             row.append(f"{confidence:.2f}")
         if filename is not None:
             row.append(filename)
+
         worksheet.append_row(row)
     except Exception as e:
         st.warning(f"Failed to log to Google Sheets: {e}")
@@ -54,7 +62,7 @@ def read_sheet():
         df = pd.DataFrame(data)
         return df
     except Exception as e:
-        st.warning(f"Gagal membaca Google Sheets: {e}")
+        st.warning(f"Failed to log to Google Sheets: {e}")
         return pd.DataFrame()
 
 # ========== MODEL DEFINITIONS ==========
