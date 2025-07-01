@@ -1,0 +1,140 @@
+/* ======================
+BUTTON CUSTOMIZATION
+========================= */
+.stButton > button {
+    font-size: 18px !important;
+    padding: 12px 20px;
+    border-radius: 12px;
+    background-color: #73c3ca;
+    color: white;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.stButton > button:hover {
+    background-color: #e8f0fe;
+    border-color: #4a90e2;
+    color: #1a1a1a;
+}
+
+/* ======================
+SIDEBAR TEXT STYLES
+========================= */
+.sidebar-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #4b6cb7;
+    margin-bottom: 8px;
+}
+
+.sidebar-desc {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.current-page {
+    font-size: 16px;
+    margin-top: 20px;
+    color: #333;
+    background-color: #f0f2f6;
+    padding: 8px 12px;
+    border-radius: 8px;
+}
+
+/* ======================
+TEXT STYLES (GLOBAL)
+========================= */
+.big-title {
+    font-size: 36px !important;
+    text-align: center;
+    font-weight: bold;
+}
+
+.big-font {
+    font-size: 20px !important; /* sudah override dari sebelumnya */
+    margin-top: 10px;
+}
+
+.medium-font {
+    font-size: 16px !important;
+    margin-top: 6px;
+}
+
+.justify-text {
+    text-align: justify;
+    margin-bottom: 10px;
+}
+
+/* ======================
+EMOJIS AND ICONS
+========================= */
+.emoji {
+    font-size: 50px;
+    text-align: center;
+    line-height: 1;
+}
+
+/* ======================
+CONTENT CONTAINERS
+========================= */
+.result-box {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid #e6e6e6;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.info-box {
+    background-color: #e8f0fe;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+.insight {
+    font-size: 16px;
+    color: #444;
+    padding: 12px;
+    background-color: #f1f3f6;
+    border-radius: 12px;
+    font-style: italic;
+}
+
+.card {
+    background-color: #f9f9f9;
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
+/* ======================
+SPECIAL LAYOUTS
+========================= */
+.emotion-box {
+    display: flex;
+    justify-content: space-around;
+    padding: 15px 0;
+    font-size: 20px;
+}
+
+.audio-note {
+    text-align: center;
+    font-size: 16px;
+}
+
+.how-to-use {
+    padding-left: 20px;
+    font-size: 20px;
+}
+
+/* ======================
+TABS
+========================= */
+.stTabs [data-baseweb="tab"] {
+    font-size: 30px;
+    font-weight: bold;
+    padding: 10px 24px;
+}
