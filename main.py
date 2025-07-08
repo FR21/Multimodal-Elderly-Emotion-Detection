@@ -141,7 +141,8 @@ vis_mood_insights = {
 }
 
 # ========== MODEL LOADING ==========
-config = ViTConfig.from_pretrained('google/vit-base-patch16-224-in21k', num_labels=len(class_names))
+cache_dir = "./model_cache"
+config = ViTConfig.from_pretrained('google/vit-base-patch16-224-in21k', num_labels=len(class_names), cache_dir=cache_dir)
 model = ViTForImageClassification(config)
 model.load_state_dict(torch.load("models/model_image.pt", map_location=device), strict=False)
 model.to(device)
